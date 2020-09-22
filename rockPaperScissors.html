@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+        <script type="text/javascript">
+            // Need to add a reset function.
+            // Need to make sure that player selection is rock, paper, or scissors.
+            // Need to add win messsages with inline selections ie. "You win. Rock beats Scissors!"
+            // Need to follow up with the multi-round section
+
+
+
+            // This prompts the user for their selection.
+            function userPlay() {
+                let playerSelection = prompt("Let's play 'Rock, Paper, Scissors'. Make your choice!").toUpperCase();
+                return playerSelection;
+            }
+            
+            // This randomly generates the computer's selection.
+            function computerPlay() {
+                let choices = ['rock', 'paper', 'scissors'];
+                return choices[Math.floor(Math.random()*choices.length)].toUpperCase();
+            }
+
+            // let computerSelection = computerPlay().toUpperCase();
+
+            // Runs through a single round of the game. Need to make it so that all inputs are made UPPERCASE
+            function playRound(playerSelection, computerSelection) {
+                if (computerSelection != playerSelection) {
+                    if (computerSelection === "ROCK" && playerSelection === "PAPER") {
+                        console.log("You win!");
+                    } else if (computerSelection === "PAPER" && playerSelection === "SCISSORS") {
+                        console.log("You win!");
+                    } else if (computerSelection === "SCISSORS" && playerSelection ==="ROCK") {
+                        console.log("You win!");
+                    } else {
+                        console.log("You lose!");
+                    }
+                } else {
+                    console.log("Tie!");
+                }
+            }
+
+            const playerSelection = userPlay();
+            const computerSelection = computerPlay();
+            console.log(playRound(playerSelection, computerSelection));
+
+        </script>
+</html>
